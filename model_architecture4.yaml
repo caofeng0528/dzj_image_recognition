@@ -1,0 +1,503 @@
+backend: tensorflow
+class_name: Sequential
+config:
+  layers:
+  - class_name: InputLayer
+    config:
+      batch_input_shape: !!python/tuple
+      - null
+      - 227
+      - 227
+      - 3
+      dtype: float32
+      name: conv2d_83_input
+      ragged: false
+      sparse: false
+  - class_name: Conv2D
+    config:
+      activation: relu
+      activity_regularizer: null
+      batch_input_shape: !!python/tuple
+      - null
+      - 227
+      - 227
+      - 3
+      bias_constraint: null
+      bias_initializer:
+        class_name: Zeros
+        config: {}
+      bias_regularizer: null
+      data_format: channels_last
+      dilation_rate: &id001 !!python/tuple
+      - 1
+      - 1
+      dtype: float32
+      filters: 96
+      groups: 1
+      kernel_constraint: null
+      kernel_initializer:
+        class_name: GlorotUniform
+        config:
+          seed: null
+      kernel_regularizer: null
+      kernel_size: !!python/tuple
+      - 11
+      - 11
+      name: conv2d_83
+      padding: valid
+      strides: !!python/tuple
+      - 4
+      - 4
+      trainable: true
+      use_bias: true
+  - class_name: BatchNormalization
+    config:
+      axis: !!python/object/apply:tensorflow.python.training.tracking.data_structures.ListWrapper
+      - - 3
+      beta_constraint: null
+      beta_initializer:
+        class_name: Zeros
+        config: {}
+      beta_regularizer: null
+      center: true
+      dtype: float32
+      epsilon: 0.001
+      gamma_constraint: null
+      gamma_initializer:
+        class_name: Ones
+        config: {}
+      gamma_regularizer: null
+      momentum: 0.99
+      moving_mean_initializer:
+        class_name: Zeros
+        config: {}
+      moving_variance_initializer:
+        class_name: Ones
+        config: {}
+      name: batch_normalization_56
+      scale: true
+      trainable: true
+  - class_name: MaxPooling2D
+    config:
+      data_format: channels_last
+      dtype: float32
+      name: max_pooling2d_65
+      padding: valid
+      pool_size: !!python/tuple
+      - 3
+      - 3
+      strides: !!python/tuple
+      - 2
+      - 2
+      trainable: true
+  - class_name: Conv2D
+    config:
+      activation: relu
+      activity_regularizer: null
+      bias_constraint: null
+      bias_initializer:
+        class_name: Zeros
+        config: {}
+      bias_regularizer: null
+      data_format: channels_last
+      dilation_rate: *id001
+      dtype: float32
+      filters: 256
+      groups: 1
+      kernel_constraint: null
+      kernel_initializer:
+        class_name: GlorotUniform
+        config:
+          seed: null
+      kernel_regularizer: null
+      kernel_size: !!python/tuple
+      - 5
+      - 5
+      name: conv2d_84
+      padding: same
+      strides: !!python/tuple
+      - 1
+      - 1
+      trainable: true
+      use_bias: true
+  - class_name: BatchNormalization
+    config:
+      axis: !!python/object/apply:tensorflow.python.training.tracking.data_structures.ListWrapper
+      - - 3
+      beta_constraint: null
+      beta_initializer:
+        class_name: Zeros
+        config: {}
+      beta_regularizer: null
+      center: true
+      dtype: float32
+      epsilon: 0.001
+      gamma_constraint: null
+      gamma_initializer:
+        class_name: Ones
+        config: {}
+      gamma_regularizer: null
+      momentum: 0.99
+      moving_mean_initializer:
+        class_name: Zeros
+        config: {}
+      moving_variance_initializer:
+        class_name: Ones
+        config: {}
+      name: batch_normalization_57
+      scale: true
+      trainable: true
+  - class_name: MaxPooling2D
+    config:
+      data_format: channels_last
+      dtype: float32
+      name: max_pooling2d_66
+      padding: valid
+      pool_size: !!python/tuple
+      - 3
+      - 3
+      strides: !!python/tuple
+      - 2
+      - 2
+      trainable: true
+  - class_name: Dropout
+    config:
+      dtype: float32
+      name: dropout_77
+      noise_shape: null
+      rate: 0.1
+      seed: null
+      trainable: true
+  - class_name: Conv2D
+    config:
+      activation: relu
+      activity_regularizer: null
+      bias_constraint: null
+      bias_initializer:
+        class_name: Zeros
+        config: {}
+      bias_regularizer: null
+      data_format: channels_last
+      dilation_rate: *id001
+      dtype: float32
+      filters: 384
+      groups: 1
+      kernel_constraint: null
+      kernel_initializer:
+        class_name: GlorotUniform
+        config:
+          seed: null
+      kernel_regularizer: null
+      kernel_size: !!python/tuple
+      - 3
+      - 3
+      name: conv2d_85
+      padding: same
+      strides: !!python/tuple
+      - 1
+      - 1
+      trainable: true
+      use_bias: true
+  - class_name: BatchNormalization
+    config:
+      axis: !!python/object/apply:tensorflow.python.training.tracking.data_structures.ListWrapper
+      - - 3
+      beta_constraint: null
+      beta_initializer:
+        class_name: Zeros
+        config: {}
+      beta_regularizer: null
+      center: true
+      dtype: float32
+      epsilon: 0.001
+      gamma_constraint: null
+      gamma_initializer:
+        class_name: Ones
+        config: {}
+      gamma_regularizer: null
+      momentum: 0.99
+      moving_mean_initializer:
+        class_name: Zeros
+        config: {}
+      moving_variance_initializer:
+        class_name: Ones
+        config: {}
+      name: batch_normalization_58
+      scale: true
+      trainable: true
+  - class_name: MaxPooling2D
+    config:
+      data_format: channels_last
+      dtype: float32
+      name: max_pooling2d_67
+      padding: valid
+      pool_size: !!python/tuple
+      - 4
+      - 4
+      strides: !!python/tuple
+      - 2
+      - 2
+      trainable: true
+  - class_name: Dropout
+    config:
+      dtype: float32
+      name: dropout_78
+      noise_shape: null
+      rate: 0.1
+      seed: null
+      trainable: true
+  - class_name: Conv2D
+    config:
+      activation: relu
+      activity_regularizer: null
+      bias_constraint: null
+      bias_initializer:
+        class_name: Zeros
+        config: {}
+      bias_regularizer: null
+      data_format: channels_last
+      dilation_rate: *id001
+      dtype: float32
+      filters: 384
+      groups: 1
+      kernel_constraint: null
+      kernel_initializer:
+        class_name: GlorotUniform
+        config:
+          seed: null
+      kernel_regularizer: null
+      kernel_size: !!python/tuple
+      - 3
+      - 3
+      name: conv2d_86
+      padding: same
+      strides: !!python/tuple
+      - 1
+      - 1
+      trainable: true
+      use_bias: true
+  - class_name: BatchNormalization
+    config:
+      axis: !!python/object/apply:tensorflow.python.training.tracking.data_structures.ListWrapper
+      - - 3
+      beta_constraint: null
+      beta_initializer:
+        class_name: Zeros
+        config: {}
+      beta_regularizer: null
+      center: true
+      dtype: float32
+      epsilon: 0.001
+      gamma_constraint: null
+      gamma_initializer:
+        class_name: Ones
+        config: {}
+      gamma_regularizer: null
+      momentum: 0.99
+      moving_mean_initializer:
+        class_name: Zeros
+        config: {}
+      moving_variance_initializer:
+        class_name: Ones
+        config: {}
+      name: batch_normalization_59
+      scale: true
+      trainable: true
+  - class_name: Dropout
+    config:
+      dtype: float32
+      name: dropout_79
+      noise_shape: null
+      rate: 0.2
+      seed: null
+      trainable: true
+  - class_name: Conv2D
+    config:
+      activation: relu
+      activity_regularizer: null
+      bias_constraint: null
+      bias_initializer:
+        class_name: Zeros
+        config: {}
+      bias_regularizer: null
+      data_format: channels_last
+      dilation_rate: *id001
+      dtype: float32
+      filters: 256
+      groups: 1
+      kernel_constraint: null
+      kernel_initializer:
+        class_name: GlorotUniform
+        config:
+          seed: null
+      kernel_regularizer: null
+      kernel_size: !!python/tuple
+      - 3
+      - 3
+      name: conv2d_87
+      padding: same
+      strides: !!python/tuple
+      - 1
+      - 1
+      trainable: true
+      use_bias: true
+  - class_name: BatchNormalization
+    config:
+      axis: !!python/object/apply:tensorflow.python.training.tracking.data_structures.ListWrapper
+      - - 3
+      beta_constraint: null
+      beta_initializer:
+        class_name: Zeros
+        config: {}
+      beta_regularizer: null
+      center: true
+      dtype: float32
+      epsilon: 0.001
+      gamma_constraint: null
+      gamma_initializer:
+        class_name: Ones
+        config: {}
+      gamma_regularizer: null
+      momentum: 0.99
+      moving_mean_initializer:
+        class_name: Zeros
+        config: {}
+      moving_variance_initializer:
+        class_name: Ones
+        config: {}
+      name: batch_normalization_60
+      scale: true
+      trainable: true
+  - class_name: MaxPooling2D
+    config:
+      data_format: channels_last
+      dtype: float32
+      name: max_pooling2d_68
+      padding: valid
+      pool_size: !!python/tuple
+      - 3
+      - 3
+      strides: !!python/tuple
+      - 2
+      - 2
+      trainable: true
+  - class_name: Dropout
+    config:
+      dtype: float32
+      name: dropout_80
+      noise_shape: null
+      rate: 0.3
+      seed: null
+      trainable: true
+  - class_name: Flatten
+    config:
+      data_format: channels_last
+      dtype: float32
+      name: flatten_12
+      trainable: true
+  - class_name: Dense
+    config:
+      activation: relu
+      activity_regularizer: null
+      bias_constraint: null
+      bias_initializer:
+        class_name: Zeros
+        config: {}
+      bias_regularizer: null
+      dtype: float32
+      kernel_constraint: null
+      kernel_initializer:
+        class_name: GlorotUniform
+        config:
+          seed: null
+      kernel_regularizer: null
+      name: dense_48
+      trainable: true
+      units: 4096
+      use_bias: true
+  - class_name: Dropout
+    config:
+      dtype: float32
+      name: dropout_81
+      noise_shape: null
+      rate: 0.5
+      seed: null
+      trainable: true
+  - class_name: Dense
+    config:
+      activation: relu
+      activity_regularizer: null
+      bias_constraint: null
+      bias_initializer:
+        class_name: Zeros
+        config: {}
+      bias_regularizer: null
+      dtype: float32
+      kernel_constraint: null
+      kernel_initializer:
+        class_name: GlorotUniform
+        config:
+          seed: null
+      kernel_regularizer: null
+      name: dense_49
+      trainable: true
+      units: 4096
+      use_bias: true
+  - class_name: Dropout
+    config:
+      dtype: float32
+      name: dropout_82
+      noise_shape: null
+      rate: 0.5
+      seed: null
+      trainable: true
+  - class_name: Dense
+    config:
+      activation: relu
+      activity_regularizer: null
+      bias_constraint: null
+      bias_initializer:
+        class_name: Zeros
+        config: {}
+      bias_regularizer: null
+      dtype: float32
+      kernel_constraint: null
+      kernel_initializer:
+        class_name: GlorotUniform
+        config:
+          seed: null
+      kernel_regularizer: null
+      name: dense_50
+      trainable: true
+      units: 1000
+      use_bias: true
+  - class_name: Dropout
+    config:
+      dtype: float32
+      name: dropout_83
+      noise_shape: null
+      rate: 0.5
+      seed: null
+      trainable: true
+  - class_name: Dense
+    config:
+      activation: softmax
+      activity_regularizer: null
+      bias_constraint: null
+      bias_initializer:
+        class_name: Zeros
+        config: {}
+      bias_regularizer: null
+      dtype: float32
+      kernel_constraint: null
+      kernel_initializer:
+        class_name: GlorotUniform
+        config:
+          seed: null
+      kernel_regularizer: null
+      name: dense_51
+      trainable: true
+      units: 2
+      use_bias: true
+  name: sequential_17
+keras_version: 2.4.0
